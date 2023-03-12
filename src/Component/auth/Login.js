@@ -1,22 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { auth, provider } from "../../firebase";
-import  {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../reducers/userSlice";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-   const navigate = useNavigate();
+  const user = useSelector((state) => state.user.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/UrduQA");
+    }
+  }, [user, navigate]);
+
   const signIn = () => {
-    auth.signInWithPopup(provider).catch((e) => {
-      alert(e.message).then(navigate ("/UrduQA"));
-      
-    });
+    auth
+      .signInWithPopup(provider)
+      .then(() => navigate("/UrduQA"))
+      .catch((e) => {
+        alert(e.message);
+      });
   };
 
-  
   const handleSignIn = (e) => {
     e.preventDefault();
 
@@ -25,7 +36,8 @@ function Login() {
       .then((auth) => {
         console.log(auth);
       })
-      .catch((e) => alert(e.message)).then(navigate ("/UrduQA"));
+      .then(() => navigate("/UrduQA"))
+      .catch((e) => alert(e.message));
   };
 
   const registerSignIn = (e) => {
@@ -38,7 +50,19 @@ function Login() {
           console.log(auth);
         }
       })
-      .catch((e) => alert(e.message)).then(navigate ("/UrduQA"));
+      .then(() => navigate("/UrduQA"))
+      .catch((e) => alert(e.message));
+  };
+
+  const guestHandler = () => {
+    dispatch(
+      login({
+        uid: 0,
+        email: "guest",
+        displayName: "GUEST",
+        photo: "guest",
+      })
+    );
   };
   return (
     <div className="login">
@@ -54,30 +78,17 @@ function Login() {
         </div>
         <div className="login_auth">
           <div className="login_authOptions">
-            <div className="login_authOption">
-              <img
-                className="login_googleAuth"
-                src="https://media-public.canva.com/MADnBiAubGA/3/screen.svg"
-                alt=""
-              />
-              <p onClick={signIn}>Continue With Google</p>
+            <div className="login_authOption" onClick={signIn}>
+              <img className="login_googleAuth" src="https://media-public.canva.com/MADnBiAubGA/3/screen.svg" alt="" />
+              <p>Continue With Google</p>
             </div>
-            
+
             <div className="login_authDesc">
               <p>
-                <span style={{ color: "blue", cursor: "pointer" }}>
-                  Sign Up With Email
-                </span>
-                . By continuing you indicate that you have read and agree to
-                UrduQA's.
-                <span style={{ color: "blue", cursor: "pointer" }}>
-                  Terms of Service{" "}
-                </span>
-                and{" "}
-                <span style={{ color: "blue", cursor: "pointer" }}>
-                  Privacy Policy
-                </span>
-                .
+                <span style={{ color: "blue", cursor: "pointer" }}>Sign Up With Email</span>. By continuing you indicate
+                that you have read and agree to UrduQA's.
+                <span style={{ color: "blue", cursor: "pointer" }}>Terms of Service </span>
+                and <span style={{ color: "blue", cursor: "pointer" }}>Privacy Policy</span>.
               </p>
             </div>
           </div>
@@ -89,6 +100,7 @@ function Login() {
               <div className="login_inputField">
                 <input
                   value={email}
+                  style={{ width: "100%" }}
                   onChange={(e) => setEmail(e.target.value)}
                   type="text"
                   placeholder="Email"
@@ -96,6 +108,7 @@ function Login() {
               </div>
               <div className="login_inputField">
                 <input
+                  style={{ width: "100%" }}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
@@ -105,10 +118,16 @@ function Login() {
             </div>
             <div className="login_forgButt">
               <small>Forgot Password?</small>
-              <button onClick={handleSignIn}>Login</button>
-
             </div>
+
+            <button onClick={handleSignIn}>Login</button>
             <button onClick={registerSignIn}>Register</button>
+            <button
+              onClick={guestHandler}
+              style={{ padding: "9px", backgroundColor: "white", color: "black", border: "1px solid #ccc" }}
+            >
+              Continue as Guest
+            </button>
           </div>
         </div>
         <div className="login_lang">
@@ -116,7 +135,6 @@ function Login() {
           <ChevronRightIcon fontSize="small" />
         </div>
         <div className="login_footer">
-          
           <p>&copy; UrduQA 2023</p>
         </div>
       </div>

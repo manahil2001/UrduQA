@@ -1,34 +1,34 @@
-.urduqabox{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid lightgray;
-    background-color: rgb(255, 251, 251);
-    border-radius: 5px;
-    cursor: pointer;
+.urduqabox {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid lightgray;
+  background-color: rgb(255, 251, 251);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.urduqabox:hover{
-    border: 1px solid gray;
+.urduqabox:hover {
+  border: 1px solid gray;
 }
-.urduqabox_info{
-    display: flex;
-    align-items: center;
-}
-
-.urduqabox_info > h5{
-    color: rgb(129, 129, 129);
-    font-weight: 300;
-    margin-left: 10px;
+.urduqabox_info {
+  display: flex;
+  align-items: center;
 }
 
-.urduqabox_urdu{
-    display: flex;
-    margin-top: 8px;
+.urduqabox_info > h5 {
+  color: rgb(129, 129, 129);
+  font-weight: 300;
+  margin-left: 10px;
 }
 
-.urduqabox_urdu > p{
-    color: gray;
-    font-weight: bold;
-    font-size: large;
+.urduqabox_urdu {
+  display: flex;
+  margin-top: 8px;
+}
+
+.urduqabox_urdu > p {
+  color: gray;
+  font-weight: bold;
+  font-size: large;
 }

@@ -3,20 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 export const questionSlice = createSlice({
   name: "question",
   initialState: {
-    questionId: null,
-    questionName: null,
+    allQuestions: [],
+    filteredQuestions: [],
   },
   reducers: {
-    setQuestionInfo: (state, action) => {
-      state.questionId = action.payload.questionId;
-      state.questionName = action.payload.questionName;
+    setQuestions: (state, action) => {
+      return { allQuestions: action.payload, filteredQuestions: action.payload };
+    },
+    filteredQuestions: (state, action) => {
+      state.filteredQuestions = action.payload;
     },
   },
 });
 
-export const { setQuestionInfo } = questionSlice.actions;
-export const selectQuestionId = (state) => state.question.questionId;
-export const selectQuestionName = (state) => state.question.questionName;
-
+export const QuestionActions = questionSlice.actions;
 
 export default questionSlice.reducer;

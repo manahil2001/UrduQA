@@ -1,213 +1,212 @@
 .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.login_container{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    width: 700px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+.login_container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 700px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 
-.login_logo{
-    display: flex;
-    justify-content: center;
-    size: 20px;
+.login_logo {
+  display: flex;
+  justify-content: center;
+  size: 20px;
 }
 
 .login_desc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.login_desc > h3{
-    margin-top: 10px;
-    text-align: center;
-    font-size: xx-large;
-    
+.login_desc > h3 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: xx-large;
 }
 
-.login_desc > p{
-    color: gray;
-    text-align: center;
-    font-weight: 500;
-    font-size: 20px;
+.login_desc > p {
+  color: gray;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
 }
 
-.login_auth{
-    display: flex;
-    margin-top: 50px;
+.login_auth {
+  display: flex;
+  margin-top: 50px;
 }
 
-.login_authOptions{
-    display: flex;
-    flex: 0.5;
-    flex-direction: column;
-    padding: 20px;
-    border-right: 1px solid lightgray;
+.login_authOptions {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid lightgray;
 }
 
-.login_authOption{
-    display: flex;
-    align-items: center;
-    padding: 7px;
-    margin-bottom: 15px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    cursor: pointer;
+.login_authOption {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  margin-bottom: 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.login_authOption:hover{
-    background-color: rgb(226, 226, 226);
+.login_authOption:hover {
+  background-color: rgb(226, 226, 226);
 }
 
-.login_authOption > img{
-    height: 30px;
-    object-fit: contain;
+.login_authOption > img {
+  height: 30px;
+  object-fit: contain;
 }
 
-.login_authOption > p{
-    margin-left: 11px;
+.login_authOption > p {
+  margin-left: 11px;
 }
 
-.login_authDesc{
-    display: flex;
-    align-items: center;
-    padding: 7px;
-    margin-bottom: 15px;
+.login_authDesc {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  margin-bottom: 15px;
 }
 
-.login_authDesc > p{
-    font-size: small;
-    color: gray;
+.login_authDesc > p {
+  font-size: small;
+  color: gray;
 }
 
-.login_emailPass{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    flex: 0.5;
-    margin-left: 20px;
+.login_emailPass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  flex: 0.5;
+  margin-left: 20px;
 }
 
 .login_label > h4 {
-    padding: 5px;
+  padding: 5px;
 }
 
-.login_inputFields{
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
+.login_inputFields {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 
-.login_inputField{
-    padding: 5px;
+.login_inputField {
+  padding: 5px;
 }
 
-.login_inputField > input{
-    padding: 10px;
-    width: 100px;
-    outline: none;
-    border: none;
-    background-color: rgb(236, 236, 236);
+.login_inputField > input {
+  padding: 10px;
+  width: 100px;
+  outline: none;
+  border: none;
+  background-color: rgb(236, 236, 236);
 }
 
 .login_textBox {
-    padding: 10px;
-    font-size: 10px;
-    margin-bottom: 10px;
-  }
-
-.login_forgButt{
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 10px;
+  font-size: 10px;
+  margin-bottom: 10px;
 }
 
-.login_forgButt > small{
-    color: gray;
-    cursor: pointer;
+.login_forgButt {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.login_forgButt > link:hover{
-    color: blue;
-    text-decoration: underline;
+.login_forgButt > small {
+  color: gray;
+  cursor: pointer;
 }
 
-.login_forgButt > button{
-    padding: 9px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: blue;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
+.login_forgButt > link:hover {
+  color: blue;
+  text-decoration: underline;
 }
 
-.login_emailPass > button{
-    padding: 9px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: blue;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 10px;
+.login_forgButt > button {
+  padding: 9px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-.login_lang{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-    margin-top: 30px;
-    padding: 10px;
+.login_emailPass > button {
+  padding: 9px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.login_lang > p{
-    color: gray;
-    margin-right: 5px;
-    cursor: pointer;
-    font-size: 13px;
+.login_lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  margin-top: 30px;
+  padding: 10px;
 }
 
-.login_lang > p:hover{
-    color: gray;
-    margin-right: 5px;
-    text-decoration: underline;
+.login_lang > p {
+  color: gray;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 13px;
 }
 
-.login_lang > .MuiSvgIcon-root{
-    color: gray;
+.login_lang > p:hover {
+  color: gray;
+  margin-right: 5px;
+  text-decoration: underline;
 }
 
-.login_footer{
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.login_lang > .MuiSvgIcon-root {
+  color: gray;
 }
 
-.login_footer > p{
-    color: gray;
-    font-size: small;
-    cursor: pointer;
+.login_footer {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.login_footer >p:hover{
-    text-decoration: underline;
+.login_footer > p {
+  color: gray;
+  font-size: small;
+  cursor: pointer;
+}
+
+.login_footer > p:hover {
+  text-decoration: underline;
 }
